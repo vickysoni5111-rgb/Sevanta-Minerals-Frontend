@@ -2,6 +2,7 @@ import './DynamicProductPage.css';
 import React, { useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
+import { Helmet } from "react-helmet-async"; // ✨ SEO के लिए इम्पोर्ट किया
 import { products } from "./products";
 import EnquiryModal from "./EnquiryModal"; 
 
@@ -25,8 +26,6 @@ const scrollSlideRight = {
 };
 
 // Ruler ticks for the V300 signature "micron scale" element.
-// 0 to 50 microns, a major tick every 10, the accent marker sits at 45µm
-// (the product's actual sub-45µm fineness claim).
 const RULER_TICKS = Array.from({ length: 51 }, (_, i) => {
   if (i === 45) return { value: i, type: "marker" };
   if (i % 10 === 0) return { value: i, type: "major" };
@@ -47,12 +46,21 @@ export default function ProductDetail() {
     );
   }
 
+  // 🎯 डायनामिक SEO मेटा टैग्स का सेटअप (shyamclay.com की तरह कीवर्ड-रिच)
+  const seoTitle = `${product.name} ${product.mesh ? product.mesh : ''} Supplier & Exporter | Sevanta Minerals`;
+  const seoDesc = `Premium quality ${product.name} (${product.mesh ? product.mesh : 'Industrial Grade'}) from India. High SiO2 purity, low iron content, engineered for glass, ceramics, and coatings. Request a quote now!`;
+
   /* =============================================================
-     MESH 200 THEME (ALL ORIGINAL SECTIONS RESTORED)
+      MESH 200 THEME
   ============================================================= */
   if (product.isSpecial200Mesh) {
     return (
       <div className="product-page-wrapper mesh-200-theme">
+        <Helmet>
+          <title>{seoTitle}</title>
+          <meta name="description" content={seoDesc} />
+          <meta name="keywords" content={`${product.name}, ${product.mesh}, Quartz Powder India, High Purity Quartz, Quartz Exporter`} />
+        </Helmet>
         
         {/* HERO SECTION */}
         <section className="hero-200">
@@ -76,7 +84,7 @@ export default function ProductDetail() {
               </button>
             </motion.div>
             <div className="hero-200__image-holder">
-              <img src={product.fullHeroBg} alt="Quartz Purity" className="contain-img" />
+              <img src={product.fullHeroBg} alt={`${product.name} Purity Structure`} className="contain-img" />
             </div>
           </div>
         </section>
@@ -118,7 +126,7 @@ export default function ProductDetail() {
               </div>
             </motion.div>
             <div className="features-img-center-pane">
-              <img src={product.secondSectionBg} alt="Fine Quartz" className="contain-img" />
+              <img src={product.secondSectionBg} alt={`Processed ${product.name}`} className="contain-img" />
             </div>
             <div className="features-cards-right">
               <motion.div className="sub-feature-card" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={scrollFadeUp}>
@@ -162,7 +170,7 @@ export default function ProductDetail() {
               viewport={{ once: true }}
               variants={scrollSlideRight}
             >
-              <img src={product.reliableImg} alt="Supply Chain" className="contain-img cropped-aspect" />
+              <img src={product.reliableImg} alt="Global Logistics Supply Chain Setup" className="contain-img cropped-aspect" />
             </motion.div>
           </div>
         </section>
@@ -177,7 +185,7 @@ export default function ProductDetail() {
             <div className="marquee-track">
               {[...product.sliderImages, ...product.sliderImages].map((img, index) => (
                 <div className="marquee-slide-card" key={index}>
-                  <img src={img} alt="Application" />
+                  <img src={img} alt="Industrial Application Setup" />
                   <div className="slide-overlay-title"><span>Segment Application</span></div>
                 </div>
               ))}
@@ -191,16 +199,10 @@ export default function ProductDetail() {
             <motion.div className="consistent-content-left" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={scrollSlideLeft}>
               <span className="sub-tag">Quality Assurance</span>
               <h2>Engineered Purity for <br/><span className="gold-text">Consistent Performance</span></h2>
-              <p>Sevanta Overseas is a trusted exporter of premium-quality Quartz Powder from India. We specialize in supplying high-purity Quartz Powder in 200 Mesh, 250 Mesh, and 300 Mesh grades to industries worldwide.
-
-With a strong focus on quality, consistency, and customer satisfaction, we source our raw materials from carefully selected mines and process them using advanced manufacturing techniques. Our products are widely used in glass, ceramics, paints, coatings, construction materials, and other industrial applications.
-
-At Sevanta Overseas, we are committed to delivering reliable products, competitive pricing, and timely shipments to our global customers. Our goal is to build long-term partnerships through excellence, transparency, and dependable service.
-
-Sevanta Overseas – Delivering Purity, Quality, and Trust Across Borders.</p>
+              <p>Sevanta Overseas is a trusted exporter of premium-quality Quartz Powder from India. We specialize in supplying high-purity Quartz Powder in 200 Mesh, 250 Mesh, and 300 Mesh grades to industries worldwide. With a strong focus on quality, consistency, and customer satisfaction, we source our raw materials from carefully selected mines and process them using advanced manufacturing techniques.</p>
             </motion.div>
             <motion.div className="consistent-img-right" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={scrollSlideRight}>
-              <img src={product.consistentImg} alt="Engineered Purity" className="contain-img" />
+              <img src={product.consistentImg} alt="Engineered Mineral Purity Standards" className="contain-img" />
             </motion.div>
           </div>
         </section>
@@ -215,11 +217,16 @@ Sevanta Overseas – Delivering Purity, Quality, and Trust Across Borders.</p>
   }
 
   /* =============================================================
-     MESH 250 CLEAN INTUITIVE THEME
+      MESH 250 CLEAN INTUITIVE THEME
   ============================================================= */
   if (product.isSpecial250Mesh) {
     return (
       <div className="product-page-wrapper v250-clean-layout">
+        <Helmet>
+          <title>{seoTitle}</title>
+          <meta name="description" content={seoDesc} />
+          <meta name="keywords" content={`${product.name}, Fine Quartz Powder, Micronized Silica, Minerals Exporter India`} />
+        </Helmet>
         
         {/* SECTION 1: FINE QUARTZ POWDER */}
         <section className="v250-split-hero">
@@ -249,7 +256,7 @@ Sevanta Overseas – Delivering Purity, Quality, and Trust Across Borders.</p>
             </motion.div>
 
             <div className="v250-image-preview-frame">
-              <img src={product.fineQuartzBg} alt="Fine Quartz Powder" className="v250-img-fluid" />
+              <img src={product.fineQuartzBg} alt="Premium Fine Quartz Powder Batch" className="v250-img-fluid" />
             </div>
           </div>
         </section>
@@ -279,7 +286,7 @@ Sevanta Overseas – Delivering Purity, Quality, and Trust Across Borders.</p>
               viewport={{ once: true }}
               variants={scrollSlideRight}
             >
-              <img src={product.industryImg} alt="Industry Processing" className="v250-img-fluid" />
+              <img src={product.industryImg} alt="Heavy Industrial Mineral Processing Plant" className="v250-img-fluid" />
             </motion.div>
           </div>
         </section>
@@ -288,7 +295,7 @@ Sevanta Overseas – Delivering Purity, Quality, and Trust Across Borders.</p>
         <section className="v250-split-hero white-inverse-bg">
           <div className="v250-content-container standard-grid-5050 flip-mobile-order">
             <div className="v250-image-preview-frame">
-              <img src={product.silicaBg} alt="Silica Quartz Powder" className="v250-img-fluid" />
+              <img src={product.silicaBg} alt="Silica Quartz Powder Logistics" className="v250-img-fluid" />
             </div>
 
             <motion.div 
@@ -302,7 +309,7 @@ Sevanta Overseas – Delivering Purity, Quality, and Trust Across Borders.</p>
               <h2 className="v250-title-secondary">Best Quality Silica <br/>Sevanta Minerals...</h2>
               <p className="v250-description-paragraph">
                Sevanta Minerals stands at the pinnacle of pure mineral extraction. By controlling the complete supply ecosystem 
-                from open-cast mines to multi-stage optical sortomatics, we remove critical transition elements down to parts-per-million levels.
+                from open-cast mines to multi-stage optical sortomatics.
               </p>
             </motion.div>
           </div>
@@ -320,11 +327,7 @@ Sevanta Overseas – Delivering Purity, Quality, and Trust Across Borders.</p>
             >
               <div className="v250-gold-card-text-header">
                 <h2>Applications of Silica Quartz Powder</h2>
-                <p>
-                  Silica Quartz Powder, with an exceptional SiO2 purity exceeding 99%, is a game-changer across industries. 
-                  Available in 100 mesh, 200 mesh, and 300 mesh variants, its precise sizing elevates your processes. 
-                  Experience excellence with our superior Silica Quartz Powder.
-                </p>
+                <p>Silica Quartz Powder, with an exceptional SiO2 purity exceeding 99%, is a game-changer across industries.</p>
               </div>
 
               <div className="v250-marquee-viewport-window">
@@ -332,7 +335,7 @@ Sevanta Overseas – Delivering Purity, Quality, and Trust Across Borders.</p>
                   {[...product.appCards, ...product.appCards].map((card, idx) => (
                     <div className="v250-product-node-card" key={idx}>
                       <div className="v250-node-img-box">
-                        <img src={card.img} alt={card.title} />
+                        <img src={card.img} alt={`Silica Quartz application in ${card.title}`} />
                       </div>
                       <div className="v250-node-footer-label">
                         <h4>{card.title}</h4>
@@ -355,15 +358,16 @@ Sevanta Overseas – Delivering Purity, Quality, and Trust Across Borders.</p>
   }
 
   /* =============================================================
-     MESH 300 DATASHEET THEME (SUPER-FINE MICRONIZED POWDER)
-     This grade's whole identity is "how fine is it", so the page
-     reads like a technical spec-sheet instead of a marketing hero —
-     monospace spec rows, a bordered datasheet card, and a literal
-     micron ruler that marks the sub-45µm claim on the hero image.
+      MESH 300 DATASHEET THEME
   ============================================================= */
   if (product.isSpecial300Mesh) {
     return (
       <div className="product-page-wrapper v300-datasheet-layout">
+        <Helmet>
+          <title>{seoTitle}</title>
+          <meta name="description" content={seoDesc} />
+          <meta name="keywords" content={`${product.name}, Micronized Quartz 300 Mesh, Sub-45 Micron Silica, Technical Grade Minerals`} />
+        </Helmet>
 
         {/* SECTION 1: DATASHEET HERO */}
         <section className="v300-hero">
@@ -399,7 +403,7 @@ Sevanta Overseas – Delivering Purity, Quality, and Trust Across Borders.</p>
               animate={{ opacity: 1 }}
               transition={{ duration: 0.9, delay: 0.2 }}
             >
-              <img src={product.heroBg} alt={`${product.name} ${product.mesh}`} />
+              <img src={product.heroBg} alt={`Technical Specification Sheet for ${product.name}`} />
               <div className="v300-ruler">
                 <div className="v300-ruler__label">Actual Particle Scale (µm)</div>
                 <div className="v300-ruler__scale">
@@ -427,7 +431,7 @@ Sevanta Overseas – Delivering Purity, Quality, and Trust Across Borders.</p>
               viewport={{ once: true }}
               variants={scrollSlideLeft}
             >
-              <img src={product.industryImg} alt="Industry Processing" />
+              <img src={product.industryImg} alt="Precision Micronized Grinding Factory Machine" />
             </motion.div>
 
             <motion.div
@@ -442,12 +446,12 @@ Sevanta Overseas – Delivering Purity, Quality, and Trust Across Borders.</p>
               <p>
                 Secondary grinding and dynamic air classification bring every batch down to a
                 consistent sub-45 micron profile, so it disperses evenly in resins, coatings and
-                fillers without the coarse fraction that causes surface defects. Low reactivity and
-                a controlled iron content keep it dependable across large, continuous production runs.
+                fillers without the coarse fraction that causes surface defects.
               </p>
             </motion.div>
           </div>
         </section>
+
 
         {/* SECTION 3: TECHNICAL PROFILE TILE GRID */}
         <section className="v300-profile">
@@ -491,10 +495,10 @@ Sevanta Overseas – Delivering Purity, Quality, and Trust Across Borders.</p>
           </div>
         </section>
 
-        {/* SECTION 4: EXPORT SCALE BANNER (bottom.png, full width) */}
+        {/* SECTION 4: EXPORT SCALE BANNER */}
         <section className="v300-banner">
           <div className="v300-banner__media">
-            <img src={product.bottomBannerImg} alt="Bulk Processing & Dispatch" />
+            <img src={product.bottomBannerImg} alt="Global Export Packing Facility & Logistics" />
           </div>
           <motion.div
             className="v300-banner__panel"
@@ -507,13 +511,12 @@ Sevanta Overseas – Delivering Purity, Quality, and Trust Across Borders.</p>
             <h2>Processed, Screened &amp; Packed For Global Dispatch</h2>
             <p>
               Every batch moves from grinding to classification to packaging under one
-              roof, loaded directly into 25/50kg PP bags or jumbo bags and staged for
-              container stuffing without intermediate handling.
+              roof, loaded directly into 25/50kg PP bags or jumbo bags.
             </p>
           </motion.div>
         </section>
 
-        {/* SECTION 5: APPLICATION DOSSIER — grits & grains / whiteness benchmark / salt processing */}
+        {/* SECTION 5: APPLICATION DOSSIER */}
         <section className="v300-dossier">
           <div className="v300-container">
             <motion.div
@@ -536,7 +539,7 @@ Sevanta Overseas – Delivering Purity, Quality, and Trust Across Borders.</p>
                 viewport={{ once: true }}
                 variants={scrollSlideLeft}
               >
-                <img src={product.gritsGrainsImg} alt="Quartz Grits and Grains" />
+                <img src={product.gritsGrainsImg} alt="Coarse Quartz Grits and Grains Cut" />
               </motion.div>
               <motion.div
                 className="v300-dossier-card__text"
@@ -549,9 +552,7 @@ Sevanta Overseas – Delivering Purity, Quality, and Trust Across Borders.</p>
                 <h3>The Same Line, Coarser Cuts</h3>
                 <p>
                   Alongside the 300 Mesh fines, our classifiers draw off coarser grits and
-                  grains from the identical purity stream — used in foundry sand, filter
-                  media, and exposed-aggregate terrazzo, where particle size, not
-                  fineness, does the work.
+                  grains from the identical purity stream.
                 </p>
               </motion.div>
             </div>
@@ -564,7 +565,7 @@ Sevanta Overseas – Delivering Purity, Quality, and Trust Across Borders.</p>
                 viewport={{ once: true }}
                 variants={scrollSlideRight}
               >
-                <img src={product.saltBenchmarkImg} alt="Whiteness Benchmark" />
+                <img src={product.saltBenchmarkImg} alt="Whiteness Quality Check Control" />
               </motion.div>
               <motion.div
                 className="v300-dossier-card__text"
@@ -577,9 +578,7 @@ Sevanta Overseas – Delivering Purity, Quality, and Trust Across Borders.</p>
                 <h3>Optical Whiteness, Checked Against Refined Salt</h3>
                 <p>
                   Buyers in detergent and ceramic filler lines ask for one thing first —
-                  brightness. Every batch is held against a refined-salt whiteness
-                  reference before it clears QC, so what leaves the plant reads as
-                  consistently bright as what came off the last one.
+                  brightness. Every batch is held against a refined-salt whiteness reference.
                 </p>
               </motion.div>
             </div>
@@ -592,7 +591,7 @@ Sevanta Overseas – Delivering Purity, Quality, and Trust Across Borders.</p>
                 viewport={{ once: true }}
                 variants={scrollSlideLeft}
               >
-                <img src={product.saltIndustryImg} alt="Salt & Brine Processing" />
+                <img src={product.saltIndustryImg} alt="Brine Filtration and Salt Evaporation Process" />
               </motion.div>
               <motion.div
                 className="v300-dossier-card__text"
@@ -605,18 +604,17 @@ Sevanta Overseas – Delivering Purity, Quality, and Trust Across Borders.</p>
                 <h3>Filtration Media For Salt Refining</h3>
                 <p>
                   Graded quartz media filters brine ahead of evaporation, holding back
-                  sediment while letting flow rate stay high — a quiet role upstream of
-                  the salt that eventually reaches a table.
+                  sediment while letting flow rate stay high.
                 </p>
               </motion.div>
             </div>
           </div>
         </section>
 
-        {/* SECTION 6: TEXTURED & ARCHITECTURAL COATINGS — CLOSING SHOWCASE */}
+        {/* SECTION 6: CLOSING SHOWCASE */}
         <section className="v300-closing">
           <div className="v300-closing__media">
-            <img src={product.texturedCoatingsImg} alt="Textured Architectural Coatings" />
+            <img src={product.texturedCoatingsImg} alt="Textured Architectural Facade Coating Application" />
           </div>
           <div className="v300-closing__panel">
             <motion.div
@@ -631,11 +629,6 @@ Sevanta Overseas – Delivering Purity, Quality, and Trust Across Borders.</p>
                 On exterior walls, this grade becomes the tooth in a textured render —
                 the fine aggregate that lets a trowel drag, stipple, or comb a facade into
                 a finish that holds its pattern through sun, rain, and repeated washing.
-                Controlled particle size keeps the texture even from the first wall to the
-                last, and low iron content means the render stays true to its tint instead
-                of yellowing at the seams. It's the detail most people never notice about a
-                building — and the reason a textured facade still looks sharp a decade
-                after it went up.
               </p>
               <button onClick={() => setIsModalOpen(true)} className="v300-cta light">
                 Request Coatings Datasheet →
@@ -655,6 +648,10 @@ Sevanta Overseas – Delivering Purity, Quality, and Trust Across Borders.</p>
 
   return (
     <div className="product-page-wrapper">
+      <Helmet>
+        <title>{seoTitle}</title>
+        <meta name="description" content={seoDesc} />
+      </Helmet>
       <section className="product-hero">
          <div className="product-hero__content">
             <h1 className="product-hero__title">{product.name} <span className="gold">{product.mesh}</span></h1>
