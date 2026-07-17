@@ -1,0 +1,192 @@
+.enquiry-modal__backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+  padding: 20px;
+}
+
+.enquiry-modal {
+  position: relative;
+  background: #fff;
+  border-radius: 16px;
+  width: 100%;
+  max-width: 560px;
+  max-height: 90vh;
+  overflow-y: auto;
+  padding: 32px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+.enquiry-modal__close {
+  position: absolute;
+  top: 18px;
+  right: 20px;
+  background: none;
+  border: none;
+  font-size: 1.8rem;
+  line-height: 1;
+  color: #888;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.enquiry-modal__close:hover {
+  color: #1a1a1a;
+}
+
+.enquiry-modal__header {
+  margin-bottom: 24px;
+  text-align: left;
+}
+
+.enquiry-modal__title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin: 0 0 8px;
+}
+
+.enquiry-modal__subtitle {
+  font-size: 0.92rem;
+  color: #666;
+  margin: 0;
+}
+
+.enquiry-modal__form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.enquiry-modal__field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  text-align: left;
+}
+
+.enquiry-modal__field label {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: #333;
+}
+
+.enquiry-modal__field input,
+.enquiry-modal__field select,
+.enquiry-modal__field textarea {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 12px 14px;
+  font-size: 0.95rem;
+  color: #1a1a1a;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  font-family: inherit;
+  width: 100%;
+}
+
+.enquiry-modal__field input:focus,
+.enquiry-modal__field select:focus,
+.enquiry-modal__field textarea:focus {
+  border-color: #b8863f;
+  box-shadow: 0 0 0 3px rgba(184, 134, 63, 0.15);
+}
+
+.enquiry-modal__field textarea {
+  resize: vertical;
+  min-height: 90px;
+}
+
+.enquiry-modal__phone-row {
+  display: flex;
+  gap: 10px;
+}
+
+.enquiry-modal__country-select {
+  flex: 0 0 110px;
+}
+
+.enquiry-modal__phone-input {
+  flex: 1;
+}
+
+.enquiry-modal__submit {
+  margin-top: 8px;
+  background: #b8863f;
+  color: #fff;
+  border: none;
+  padding: 14px 24px;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 6px 18px rgba(184, 134, 63, 0.35);
+}
+
+.enquiry-modal__submit:hover {
+  background: #a2742f;
+  box-shadow: 0 8px 22px rgba(184, 134, 63, 0.5);
+}
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 600px) {
+  .enquiry-modal {
+    padding: 24px 20px;
+    border-radius: 14px;
+  }
+
+  .enquiry-modal__title {
+    font-size: 1.3rem;
+  }
+
+  .enquiry-modal__phone-row {
+    flex-direction: column;
+  }
+
+  .enquiry-modal__country-select {
+    flex: 1;
+  }
+}
+
+.enquiry-modal--thankyou {
+  text-align: center;
+  padding: 44px 32px;
+}
+
+.enquiry-modal__thankyou-icon {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: #b8863f;
+  color: #fff;
+  font-size: 1.8rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px;
+}
+
+.enquiry-modal--thankyou .enquiry-modal__title {
+  margin-bottom: 10px;
+}
+
+.enquiry-modal--thankyou .enquiry-modal__subtitle {
+  margin-bottom: 28px;
+}
+
+.enquiry-modal--thankyou .enquiry-modal__submit {
+  width: auto;
+  padding: 12px 40px;
+}
+
+.enquiry-modal__error {
+  color: #d33;
+  font-size: 0.88rem;
+  margin: -6px 0 0;
+}

@@ -1,0 +1,849 @@
+/* ===========================================================
+   SEVANTA MINERALS PREMIUM FOOTER
+   Part 1 : Base + Layout + Brand + Contact
+=========================================================== */
+
+*,
+*::before,
+*::after{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html,
+body{
+    width:100%;
+    overflow-x:hidden;
+    font-family:"Poppins",sans-serif;
+    background:#fff;
+}
+
+.footer{
+
+    --gold:#b8874f;
+    --gold-dark:#9c6f3a;
+    --gold-light:#ead7bc;
+
+    --text:#4f4f4f;
+    --heading:#222;
+
+    background:#fffdf9;
+    border-top:1px solid var(--gold-light);
+
+    width:100%;
+    overflow:hidden;
+    position:relative;
+}
+
+/* ================= CONTAINER ================= */
+
+.footer__inner{
+
+    width:min(1400px,92%);
+    margin:auto;
+
+    display:grid;
+    grid-template-columns:
+    1.5fr
+    1fr
+    1fr
+    1fr
+    1.6fr;
+
+    gap:40px;
+
+    padding:70px 0 50px;
+}
+
+/* ================= COLUMN ================= */
+
+.footer__col{
+    min-width:0;
+}
+
+/* ================= BRAND ================= */
+
+.footer__brand{
+
+    display:flex;
+    flex-direction:column;
+    justify-content:flex-start;
+    align-items:flex-start;
+
+}
+
+.footer__logo{
+
+    width:135px;
+    transition:.35s;
+
+}
+
+.footer__logo:hover{
+
+    transform:scale(1.05);
+
+}
+
+.footer__tagline{
+
+    margin-top:14px;
+
+    color:#8a8a8a;
+
+    font-size:14px;
+
+    font-style:italic;
+
+    line-height:1.7;
+
+}
+
+/* ================= HEADING ================= */
+
+.footer__heading{
+
+    font-size:15px;
+
+    font-weight:700;
+
+    color:var(--gold-dark);
+
+    text-transform:uppercase;
+
+    letter-spacing:.8px;
+
+    margin-bottom:22px;
+
+}
+
+/* ================= LINKS ================= */
+
+.footer__links{
+
+    list-style:none;
+
+}
+
+.footer__links li{
+
+    margin-bottom:12px;
+
+}
+
+.footer__links a{
+
+    text-decoration:none;
+
+    color:#666;
+
+    font-size:14px;
+
+    transition:.3s;
+
+    position:relative;
+
+}
+
+.footer__links a::before{
+
+    content:"";
+
+    position:absolute;
+
+    left:-12px;
+
+    top:50%;
+
+    width:0;
+
+    height:2px;
+
+    background:var(--gold);
+
+    transition:.3s;
+
+}
+
+.footer__links a:hover{
+
+    color:var(--gold-dark);
+
+    padding-left:12px;
+
+}
+
+.footer__links a:hover::before{
+
+    width:8px;
+
+}
+
+/* ================= CONTACT ================= */
+
+.footer__contact{
+
+    list-style:none;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:18px;
+
+}
+
+.footer__contact li{
+
+    display:flex;
+
+    align-items:flex-start;
+
+    gap:12px;
+
+}
+
+.footer__icon{
+
+    width:18px;
+
+    height:18px;
+
+    color:var(--gold);
+
+    flex-shrink:0;
+
+    margin-top:2px;
+
+}
+
+.footer__contact a{
+
+    color:#666;
+
+    text-decoration:none;
+
+    line-height:1.6;
+
+    font-size:14px;
+
+    transition:.3s;
+
+}
+
+.footer__contact a:hover{
+
+    color:var(--gold-dark);
+
+}
+/* ===========================================================
+   PART 2 : REGISTERED OFFICE + ADDRESS + BOTTOM BAR
+=========================================================== */
+
+/* ================= REGISTERED OFFICE ================= */
+
+.footer__office{
+    display:flex;
+    flex-direction:column;
+    gap:18px;
+}
+
+.footer__office-item{
+    display:flex;
+    align-items:flex-start;
+    gap:14px;
+}
+
+.footer__office .footer__icon{
+    width:22px;
+    height:22px;
+    color:var(--gold);
+    flex-shrink:0;
+    margin-top:4px;
+}
+
+/* ================= ADDRESS ================= */
+
+.footer__address{
+
+    display:flex;
+    flex-direction:column;
+
+    gap:8px;
+
+    color:#666;
+
+    font-size:14px;
+
+    line-height:1.8;
+
+}
+
+.footer__address strong{
+
+    color:#222;
+
+    font-size:15px;
+
+    margin-bottom:6px;
+
+}
+
+.footer__address span{
+
+    display:block;
+
+}
+
+.footer__address-label{
+
+    color:var(--gold-dark);
+
+    font-weight:600;
+
+}
+
+/* ================= DIVIDER ================= */
+
+.footer::after{
+
+    content:"";
+
+    display:block;
+
+    width:100%;
+
+    height:1px;
+
+    background:#ece2d4;
+
+    margin-top:20px;
+
+}
+
+/* ================= BOTTOM BAR ================= */
+
+.footer__bottom{
+
+    width:100%;
+
+    background:#fffdf9;
+
+}
+
+.footer__bottom-inner{
+
+    width:min(1400px,92%);
+
+    margin:auto;
+
+    padding:22px 0;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    gap:20px;
+
+    border-top:1px solid #ece2d4;
+
+}
+
+/* ================= COPYRIGHT ================= */
+
+.footer__copyright{
+
+    color:#888;
+
+    font-size:13px;
+
+    line-height:1.6;
+
+}
+
+/* ================= CERTIFIED LOGO ================= */
+
+.footer__certified{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+}
+
+.footer__certified-logo{
+
+    height:42px;
+
+    width:auto;
+
+    transition:.35s;
+
+}
+
+.footer__certified-logo:hover{
+
+    transform:scale(1.05);
+
+}
+
+/* ================= SMOOTH EFFECT ================= */
+
+.footer a,
+.footer img,
+.footer svg{
+
+    transition:all .35s ease;
+
+}
+
+/* ================= SELECTION ================= */
+
+.footer ::selection{
+
+    background:rgba(184,135,79,.2);
+
+    color:#222;
+
+}
+
+/* ===========================================================
+   PART 3 : RESPONSIVE DESIGN
+=========================================================== */
+
+/* ================= LARGE TABLET ================= */
+
+@media (max-width:1200px){
+
+    .footer__inner{
+
+        grid-template-columns:1.4fr 1fr 1fr;
+
+        gap:35px;
+
+    }
+
+    .footer__brand{
+
+        grid-column:1/-1;
+
+        align-items:center;
+
+        text-align:center;
+
+        margin-bottom:10px;
+
+    }
+
+}
+
+/* ================= TABLET ================= */
+
+@media (max-width:992px){
+
+    .footer__inner{
+
+        grid-template-columns:1fr 1fr;
+
+        gap:30px;
+
+        padding:55px 0 40px;
+
+    }
+
+    .footer__brand{
+
+        grid-column:1/-1;
+
+        text-align:center;
+
+        align-items:center;
+
+    }
+
+    .footer__bottom-inner{
+
+        flex-direction:column;
+
+        text-align:center;
+
+        gap:15px;
+
+    }
+
+}
+
+/* ================= MOBILE ================= */
+
+@media (max-width:768px){
+
+    .footer__inner{
+
+        grid-template-columns:1fr;
+
+        gap:28px;
+
+        padding:45px 20px;
+
+    }
+
+    .footer__col{
+
+        text-align:center;
+
+    }
+
+    .footer__brand{
+
+        align-items:center;
+
+    }
+
+    .footer__heading{
+
+        margin-bottom:18px;
+
+    }
+
+    .footer__links{
+
+        display:flex;
+
+        flex-direction:column;
+
+        align-items:center;
+
+    }
+
+    .footer__contact{
+
+        align-items:center;
+
+    }
+
+    .footer__contact li{
+
+        justify-content:center;
+
+        text-align:left;
+
+        max-width:320px;
+
+        width:100%;
+
+    }
+
+    .footer__office-item{
+
+        justify-content:center;
+
+        align-items:flex-start;
+
+        text-align:left;
+
+    }
+
+    .footer__address{
+
+        align-items:flex-start;
+
+    }
+
+    .footer__logo{
+
+        width:120px;
+
+    }
+
+    .footer__certified-logo{
+
+        height:38px;
+
+    }
+
+}
+
+/* ================= SMALL MOBILE ================= */
+
+@media (max-width:480px){
+
+    .footer{
+
+        border-top:none;
+
+    }
+
+    .footer__inner{
+
+        padding:40px 18px;
+
+        gap:24px;
+
+    }
+
+    .footer__heading{
+
+        font-size:14px;
+
+    }
+
+    .footer__links a{
+
+        font-size:14px;
+
+    }
+
+    .footer__contact a{
+
+        font-size:14px;
+
+        word-break:break-word;
+
+    }
+
+    .footer__address{
+
+        font-size:13px;
+
+        line-height:1.8;
+
+    }
+
+    .footer__copyright{
+
+        font-size:12px;
+
+        text-align:center;
+
+    }
+
+    .footer__logo{
+
+        width:105px;
+
+    }
+
+}
+
+/* ================= VERY SMALL DEVICES ================= */
+
+@media (max-width:360px){
+
+    .footer__inner{
+
+        padding:35px 15px;
+
+    }
+
+    .footer__contact li{
+
+        flex-direction:column;
+
+        align-items:center;
+
+        text-align:center;
+
+        gap:8px;
+
+    }
+
+    .footer__office-item{
+
+        flex-direction:column;
+
+        align-items:center;
+
+        text-align:center;
+
+    }
+
+    .footer__address{
+
+        align-items:center;
+
+    }
+
+}
+
+/* ================= HOVER EFFECTS ================= */
+
+.footer__col{
+
+    transition:.35s;
+
+}
+
+.footer__col:hover{
+
+    transform:translateY(-4px);
+
+}
+
+.footer__logo:hover{
+
+    transform:scale(1.06);
+
+}
+
+.footer__certified-logo:hover{
+
+    transform:scale(1.08);
+
+}
+
+/* ================= SCROLLBAR ================= */
+
+.footer ::-webkit-scrollbar{
+
+    width:6px;
+
+}
+
+.footer ::-webkit-scrollbar-thumb{
+
+    background:#c7a06a;
+
+    border-radius:20px;
+
+}
+
+.footer ::-webkit-scrollbar-track{
+
+    background:#f8f5ef;
+
+}
+
+/* ================= ACCESSIBILITY ================= */
+
+.footer a:focus-visible{
+
+    outline:2px solid var(--gold);
+
+    outline-offset:4px;
+
+    border-radius:4px;
+
+}
+
+/* ================= REDUCED MOTION ================= */
+
+@media (prefers-reduced-motion:reduce){
+
+    .footer *,
+    .footer *::before,
+    .footer *::after{
+
+        animation:none !important;
+
+        transition:none !important;
+
+        scroll-behavior:auto !important;
+
+    }
+
+}
+
+@media (max-width:768px){
+
+.footer__inner{
+
+grid-template-columns:1fr;
+
+padding:45px 22px;
+
+gap:32px;
+
+}
+
+.footer__col{
+
+text-align:left;
+
+width:100%;
+
+}
+
+.footer__brand{
+
+align-items:flex-start;
+
+text-align:left;
+
+}
+
+.footer__logo{
+
+width:120px;
+
+}
+
+.footer__tagline{
+
+margin-top:15px;
+
+}
+
+.footer__heading{
+
+margin-bottom:18px;
+
+font-size:20px;
+
+}
+
+.footer__links{
+
+display:flex;
+
+flex-direction:column;
+
+align-items:flex-start;
+
+gap:12px;
+
+}
+
+.footer__contact{
+
+align-items:flex-start;
+
+}
+
+.footer__contact li{
+
+justify-content:flex-start;
+
+width:100%;
+
+}
+
+.footer__office-item{
+
+justify-content:flex-start;
+
+align-items:flex-start;
+
+}
+
+.footer__address{
+
+align-items:flex-start;
+
+}
+
+.footer__bottom-inner{
+
+flex-direction:column;
+
+gap:15px;
+
+text-align:center;
+
+}
+
+}

@@ -1,0 +1,189 @@
+/* ==========================================================================
+   ENVIRONMENTAL POLICY PREMIUM DESIGN SYSTEM
+   ========================================================================== */
+
+.env-policy-section {
+  width: 100%;
+  background-color: #fdfbf7; /* Premium global cream */
+  padding: clamp(44px, 8vw, 100px) 0;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+/* Perfect symmetric layout split grid */
+.env-policy-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(24px, 6vw, 80px); /* Big crisp padding between image and text cards */
+  align-items: center;
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+/* IMPORTANT: grid items default to min-width:auto, which lets the image's
+   intrinsic size push the column wider than its track — this is what was
+   breaking mobile. min-width:0 lets the column (and the image inside it)
+   shrink to fit the actual viewport. */
+.env-policy-grid > * {
+  min-width: 0;
+}
+
+/* ==========================================================================
+   LEFT SIDE: SHARP HIGH-RATIO IMAGE SYSTEM
+   ========================================================================== */
+.env-policy__image-wrapper {
+  position: relative;
+  width: 100%;
+  /* aspect-ratio locks the box to the image's shape regardless of viewport
+     width, so it never collapses or stretches oddly on small screens like
+     a vw-based height can */
+  aspect-ratio: 4 / 3;
+  border-radius: clamp(14px, 1.5vw, 20px);
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(44, 38, 32, 0.08);
+}
+
+.env-policy__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Fills the box edge-to-edge, cropping only the excess */
+  object-position: center 30%; /* Keeps the globe in frame instead of centering on the beans */
+  display: block;
+}
+
+/* Luxury warm overlay edge outline */
+.env-policy__image-overlay {
+  position: absolute;
+  inset: 0;
+  border: 1px solid rgba(197, 155, 81, 0.15);
+  border-radius: inherit;
+  pointer-events: none;
+}
+
+/* ==========================================================================
+   RIGHT SIDE: TYPOGRAPHIC CONTENT FLOW
+   ========================================================================== */
+.env-policy__content {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.env-policy__badge {
+  color: #c59b51; /* Premium trademark gold */
+  font-size: clamp(0.72rem, 0.3vw + 0.62rem, 0.85rem);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 12px;
+}
+
+.env-policy__title {
+  color: #2c2620; /* Luxury deep graphite dark gray */
+  font-size: clamp(1.5rem, 2.6vw + 0.9rem, 2.8rem);
+  font-weight: 600;
+  line-height: 1.22;
+  margin: 0 0 clamp(22px, 4vw, 45px) 0;
+  letter-spacing: -0.3px;
+}
+
+/* Dynamic list system rows */
+.env-policy__list {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(20px, 3vw, 35px); /* Spacious block margins */
+}
+
+.env-policy__card {
+  display: flex;
+  gap: clamp(14px, 2vw, 25px);
+  align-items: flex-start;
+}
+
+/* Elegant gold counter system indicators */
+.env-policy__card-number {
+  flex-shrink: 0;
+  font-size: clamp(0.95rem, 0.2vw + 0.9rem, 1.1rem);
+  font-weight: 700;
+  color: #c59b51;
+  background-color: rgba(197, 155, 81, 0.08);
+  padding: 6px 11px;
+  border-radius: 6px;
+  line-height: 1;
+  margin-top: 3px;
+  font-family: monospace, system-ui;
+}
+
+.env-policy__card-body {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.env-policy__card-title {
+  color: #2c2620;
+  font-size: clamp(1.05rem, 0.5vw + 0.9rem, 1.35rem);
+  font-weight: 600;
+  margin: 0 0 8px 0;
+  line-height: 1.3;
+}
+
+.env-policy__card-desc {
+  color: #5a524a; /* Smooth readability ash brown */
+  font-size: clamp(0.9rem, 0.2vw + 0.85rem, 1.02rem);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* ==========================================================================
+   RESPONSIVE LAYOUT MATRIX
+   (typography above is already fluid — these breakpoints only handle
+   structural changes: stacking, image ratio, spacing)
+   ========================================================================== */
+
+@media (max-width: 992px) {
+  .env-policy-grid {
+    grid-template-columns: 1fr; /* Switch to modular single vertical stack track */
+  }
+
+  /* Slightly shorter/wider ratio once the image has the full row to itself,
+     so it reads as a banner rather than a tall portrait crop */
+  .env-policy__image-wrapper {
+    aspect-ratio: 16 / 10;
+  }
+}
+
+@media (max-width: 600px) {
+  .env-policy-grid {
+    padding: 0 16px;
+  }
+
+  .env-policy__image-wrapper {
+    aspect-ratio: 4 / 3;
+    border-radius: 14px;
+  }
+
+  .env-policy__card {
+    gap: 14px;
+  }
+}
+
+@media (max-width: 380px) {
+  .env-policy-grid {
+    padding: 0 14px;
+  }
+
+  .env-policy__image-wrapper {
+    aspect-ratio: 1 / 1;
+  }
+
+  .env-policy__card-number {
+    padding: 5px 9px;
+  }
+
+  .env-policy__card {
+    gap: 12px;
+  }
+}

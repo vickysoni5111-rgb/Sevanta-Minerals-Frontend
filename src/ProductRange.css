@@ -1,0 +1,224 @@
+/* ---------- FULL WIDTH WRAPPER ---------- */
+.productrange-wrapper {
+  width: 100%;
+  background: #fdf8f1;
+}
+
+.productrange {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 60px 24px 80px;
+}
+
+/* ---------- HEADER ---------- */
+.productrange__header {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.productrange__eyebrow {
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: #b8863f;
+  margin-bottom: 10px;
+}
+
+.productrange__heading {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin: 0;
+  line-height: 1.3;
+}
+
+/* ---------- GRID ---------- */
+.productrange__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+/* ---------- CARD ---------- */
+.productrange__card {
+  position: relative;
+  background: #fff;
+  border: 1px solid #eadfca;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.04);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.productrange__card:hover {
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.1);
+  transform: translateY(-4px);
+}
+
+/* ---------- IMAGE WRAPPER (puri image dikhane ke liye) ---------- */
+.productrange__imagewrap {
+  position: relative;
+  width: 100%;
+  height: 260px;
+  overflow: hidden;
+  background: #11141a;
+}
+
+.productrange__img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+  display: block;
+  transition: transform 0.6s ease;
+}
+
+.productrange__card:hover .productrange__img {
+  transform: scale(1.05);
+}
+
+/* ---------- SPEC BADGE ---------- */
+.productrange__badge {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  background: #b8863f;
+  color: #fff;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  padding: 6px 14px;
+  border-radius: 999px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+  white-space: nowrap;
+}
+
+/* ---------- CARD BODY ---------- */
+.productrange__body {
+  padding: 20px 22px 24px;
+}
+
+.productrange__title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin: 0 0 8px;
+}
+
+.productrange__desc {
+  font-size: 0.92rem;
+  line-height: 1.55;
+  color: #555;
+  margin: 0;
+}
+
+/* =========================================================
+   RESPONSIVE — TABLET
+========================================================= */
+@media (max-width: 1024px) {
+  .productrange__grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+
+  .productrange__imagewrap {
+    height: 230px;
+  }
+}
+
+/* =========================================================
+   RESPONSIVE — SMALL TABLET
+========================================================= */
+@media (max-width: 768px) {
+  .productrange {
+    padding: 48px 20px 60px;
+  }
+
+  .productrange__heading {
+    font-size: 1.8rem;
+  }
+
+  .productrange__header {
+    margin-bottom: 36px;
+  }
+
+  .productrange__grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+  }
+
+  .productrange__imagewrap {
+    height: 210px;
+  }
+
+  .productrange__title {
+    font-size: 1.05rem;
+  }
+
+  .productrange__desc {
+    font-size: 0.86rem;
+  }
+}
+
+/* =========================================================
+   RESPONSIVE — MOBILE
+========================================================= */
+@media (max-width: 560px) {
+  .productrange {
+    padding: 40px 16px 50px;
+  }
+
+  .productrange__eyebrow {
+    font-size: 0.75rem;
+  }
+
+  .productrange__heading {
+    font-size: 1.5rem;
+    padding: 0 8px;
+  }
+
+  .productrange__grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .productrange__imagewrap {
+    height: 260px;
+  }
+
+  .productrange__badge {
+    font-size: 0.72rem;
+    padding: 5px 12px;
+    top: 12px;
+    right: 12px;
+  }
+
+  .productrange__body {
+    padding: 18px 20px 22px;
+  }
+
+  .productrange__title {
+    font-size: 1.1rem;
+  }
+
+  .productrange__desc {
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+}
+
+/* =========================================================
+   RESPONSIVE — VERY SMALL MOBILE
+========================================================= */
+@media (max-width: 380px) {
+  .productrange__heading {
+    font-size: 1.3rem;
+  }
+
+  .productrange__imagewrap {
+    height: 220px;
+  }
+}

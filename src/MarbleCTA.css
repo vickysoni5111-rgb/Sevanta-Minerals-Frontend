@@ -1,0 +1,273 @@
+/* ==========================================================================
+   PRODUCTION-READY PREMIUM MARBLE CTA DESIGN SYSTEM
+   ========================================================================== */
+
+.marble-cta-wrapper {
+  width: 100%;
+  background-color: #fdfbf7; /* Global luxury cream foundation base */
+  padding: clamp(44px, 7vw, 80px) 0; /* .about-container (parent) already provides horizontal gutters */
+  box-sizing: border-box;
+}
+
+/* Perfect Grid Matrix holding container */
+.marble-cta-card {
+  position: relative;
+  width: 100%;
+  /* Pure marble visibility centered with background containment control */
+  background-size: cover;
+  background-position: center right;
+  background-repeat: no-repeat;
+  border-radius: 20px;
+
+  /* Fluid structural padding, matches desktop proportions at every size */
+  padding: clamp(32px, 5.5vw, 80px) clamp(20px, 4.5vw, 60px);
+
+  display: grid;
+  grid-template-columns: 1.25fr 0.75fr; /* Tight geometric column balance */
+  gap: clamp(24px, 4vw, 60px); /* Spacious column gap preventing text overlapping on images */
+  align-items: center;
+  overflow: hidden;
+  box-sizing: border-box;
+  box-shadow: 0 15px 40px rgba(44, 38, 32, 0.06);
+}
+
+/* Linear overlay matrix protecting layout text from raw background pixels */
+.marble-cta-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(30, 26, 22, 0.6) 0%, rgba(30, 26, 22, 0.1) 60%, transparent 100%);
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Layer isolated controls */
+.marble-cta__left,
+.marble-cta__right {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  box-sizing: border-box;
+  min-width: 0;
+}
+
+/* Typography control systems */
+.marble-cta__title {
+  color: #ffffff;
+  font-size: clamp(1.5rem, 2.4vw + 0.9rem, 2.6rem);
+  font-weight: 600;
+  line-height: 1.25;
+  margin: 0 0 20px 0;
+  letter-spacing: -0.3px;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+}
+
+.marble-cta__desc {
+  color: rgba(255, 255, 255, 0.95);
+  font-size: clamp(0.9rem, 0.3vw + 0.8rem, 1.05rem);
+  line-height: 1.6;
+  max-width: 560px; /* Locked content frame width to prevent stretching */
+  margin: 0 0 clamp(24px, 4vw, 40px) 0;
+  text-shadow: 0 1px 5px rgba(0, 0, 0, 0.3);
+}
+
+/* CTA Navigation & Interactions Wrapper */
+.marble-cta__actions {
+  display: flex;
+  align-items: center;
+  gap: clamp(18px, 3vw, 35px); /* Premium spacing link separation */
+  flex-wrap: wrap;
+}
+
+/* Solid gold interactive action key */
+.btn-request {
+  background-color: #c59b51;
+  color: #ffffff;
+  border: none;
+  padding: clamp(12px, 1.6vw, 14px) clamp(24px, 3.5vw, 32px);
+  font-size: clamp(0.85rem, 0.3vw + 0.78rem, 0.95rem);
+  font-weight: 600;
+  border-radius: 30px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+  transition: background-color 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.2s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn-request svg {
+  width: 16px;
+  height: 16px;
+  transition: transform 0.3s ease;
+}
+
+.btn-request:hover {
+  background-color: #b38938;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+}
+
+.btn-request:hover svg {
+  transform: translateX(4px);
+}
+
+/* Secondary ghost hyperlink */
+.btn-contact {
+  background: transparent;
+  color: #ffffff;
+  border: none;
+  padding: 6px 0;
+  font-size: clamp(0.9rem, 0.2vw + 0.85rem, 1rem);
+  font-weight: 600;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  position: relative;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+}
+
+.btn-contact::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1.5px;
+  background-color: #ffffff;
+  transition: width 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn-contact svg {
+  width: 16px;
+  height: 16px;
+  transition: transform 0.3s ease;
+}
+
+.btn-contact:hover::after {
+  width: 70%;
+}
+
+.btn-contact:hover svg {
+  transform: translateX(4px);
+}
+
+/* ==========================================================================
+   RIGHT SIDE FLOATING SYSTEM MATRIX (GLASSMORPHIC CARD)
+   ========================================================================== */
+.why-choose-box {
+  background-color: rgba(255, 255, 255, 0.94);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: 16px;
+  padding: clamp(24px, 3.5vw, 40px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  width: 100%;
+  max-width: 380px;
+  margin-left: auto; /* Keeps card pushed right neatly */
+  box-sizing: border-box;
+}
+
+.why-choose-box__title {
+  color: #2c2620;
+  font-size: clamp(1.1rem, 0.6vw + 0.95rem, 1.4rem);
+  font-weight: 700;
+  margin: 0 0 clamp(16px, 2.5vw, 24px) 0;
+}
+
+.why-choose-box__list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(14px, 2vw, 18px);
+}
+
+.why-choose-box__item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.check-icon-wrap {
+  width: 22px;
+  height: 22px;
+  background-color: #dfb76c;
+  color: #ffffff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.check-icon-wrap svg {
+  width: 11px;
+  height: 11px;
+}
+
+.why-choose-box__text {
+  font-size: clamp(0.88rem, 0.2vw + 0.83rem, 0.98rem);
+  color: #3e3730;
+  font-weight: 500;
+}
+
+/* ==========================================================================
+   DYNAMIC RESPONSIVE MATRIX PIPELINES
+   (typography/spacing above is already fluid — these breakpoints only
+   handle structural changes: grid stacking, background position, layout)
+   ========================================================================== */
+
+/* Standard Tablets & Small Notebook Ecosystems */
+@media (max-width: 992px) {
+  .marble-cta-card {
+    grid-template-columns: 1fr; /* Breakdown from grid columns to straight stacks */
+    background-position: center;
+  }
+  .marble-cta-card::before {
+    background: rgba(30, 26, 22, 0.65); /* Increased overall depth filter readability */
+  }
+  .why-choose-box {
+    margin-left: 0;
+    max-width: 100%;
+  }
+}
+
+/* Smart Mobile Interfaces */
+@media (max-width: 600px) {
+  .marble-cta-card {
+    border-radius: 16px;
+  }
+  .marble-cta__actions {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+    width: 100%;
+  }
+  .btn-request {
+    width: 100%;
+    justify-content: center;
+  }
+  .btn-contact {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* Small phones */
+@media (max-width: 380px) {
+  .marble-cta-card {
+    padding: 26px 16px;
+  }
+  .why-choose-box {
+    padding: 22px 16px;
+  }
+  .why-choose-box__list {
+    gap: 12px;
+  }
+}

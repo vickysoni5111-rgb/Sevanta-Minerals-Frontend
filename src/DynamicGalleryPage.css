@@ -1,0 +1,909 @@
+/* ==========================================================
+   Sevanta Overseas — Gallery Page
+   Palette: charcoal/ore black + copper-amber accent
+   ========================================================== */
+
+.gallery-page {
+  background: #0d0a06;
+  color: #eee6da;
+  font-family: 'Inter', 'Segoe UI', sans-serif;
+  overflow-x: hidden;
+}
+
+.gallery-notfound {
+  padding-top: 160px;
+  min-height: 80vh;
+  text-align: center;
+  color: #eee6da;
+  background: #0d0a06;
+}
+
+.gallery-simple {
+  padding-top: 120px;
+  min-height: 80vh;
+  background: #0d0a06;
+  color: #fff;
+  text-align: center;
+}
+
+/* ---------------- HERO ---------------- */
+.gallery-hero {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: flex-end;
+  padding: 0 6vw 90px;
+}
+
+.gallery-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(13, 10, 6, 0.55) 0%,
+    rgba(13, 10, 6, 0.35) 40%,
+    rgba(13, 10, 6, 0.95) 100%
+  );
+}
+
+.gallery-hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 720px;
+}
+
+.gallery-eyebrow {
+  display: inline-block;
+  text-transform: uppercase;
+  letter-spacing: 0.28em;
+  font-size: 0.78rem;
+  color: #c17f3e;
+  font-weight: 600;
+  margin-bottom: 18px;
+}
+
+.gallery-heading {
+  font-family: 'Oswald', 'Segoe UI', sans-serif;
+  font-size: clamp(2.6rem, 6vw, 4.6rem);
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  font-weight: 600;
+  line-height: 1.05;
+  margin: 0 0 22px;
+  color: #f5ede0;
+}
+
+.gallery-subtext {
+  font-size: 1.08rem;
+  line-height: 1.6;
+  color: #cfc3af;
+  max-width: 560px;
+}
+
+.gallery-subtext-secondary {
+  margin-top: 14px;
+  max-width: 620px;
+}
+
+/* ---------------- DARK IMAGE CARD (shared) ----------------
+   Used by BOTH "Our Capability" (service-section) and
+   "Feature Strip" (feature-strip-section) — same look, different content. */
+.service-section {
+  padding: 90px 6vw 60px;
+  background: #12100c;
+  border-top: 1px solid #241f18;
+}
+
+.feature-strip-section {
+  padding: 0 6vw 90px;
+  background: #12100c;
+}
+
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 26px;
+}
+
+.service-card {
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid #2a251c;
+  background: #14110c;
+  display: flex;
+  flex-direction: column;
+}
+
+.service-card-image {
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+}
+
+.service-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.service-card:hover .service-card-image img {
+  transform: scale(1.06);
+}
+
+.service-card-body {
+  padding: 26px 24px 30px;
+}
+
+.service-card-title {
+  font-family: 'Oswald', 'Segoe UI', sans-serif;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  color: #f5ede0;
+  margin: 0 0 12px;
+}
+
+.service-card-desc {
+  font-size: 0.98rem;
+  line-height: 1.65;
+  color: #cfc3af;
+  margin: 0;
+}
+
+/* ---------------- IMPORT & EXPORT ---------------- */
+.ie-section {
+  padding: 0 6vw 120px;
+  background: #12100c;
+}
+
+.ie-card {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid #2a251c;
+  background: #14110c;
+}
+
+.ie-image {
+  background-color: #1a1712;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  min-height: 420px;
+}
+
+.ie-content {
+  padding: 60px 56px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.ie-eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.28em;
+  font-size: 0.78rem;
+  color: #c17f3e;
+  font-weight: 600;
+  margin-bottom: 18px;
+}
+
+.ie-heading {
+  font-family: 'Oswald', 'Segoe UI', sans-serif;
+  font-size: clamp(1.8rem, 3vw, 2.5rem);
+  text-transform: uppercase;
+  color: #f5ede0;
+  line-height: 1.15;
+  margin: 0 0 24px;
+}
+
+.ie-text {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: #cfc3af;
+  margin-bottom: 16px;
+}
+
+.ie-text:last-child {
+  margin-bottom: 0;
+}
+
+/* ---------------- PACKAGING PROCESS (steps + arrows) ---------------- */
+.process-section {
+  padding: 90px 6vw 110px;
+  background: #0d0a06;
+  border-top: 1px solid #241f18;
+}
+
+.process-track {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 24px 12px;
+}
+
+.process-step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 150px;
+}
+
+.process-icon {
+  width: 74px;
+  height: 74px;
+  border-radius: 50%;
+  background: #14110c;
+  border: 2px solid #c17f3e;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 18px;
+  color: #c17f3e;
+  flex-shrink: 0;
+}
+
+.process-icon svg {
+  width: 30px;
+  height: 30px;
+}
+
+.process-step h4 {
+  font-family: 'Oswald', 'Segoe UI', sans-serif;
+  font-size: 0.92rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: #f5ede0;
+  margin: 0 0 8px;
+}
+
+.process-step p {
+  font-size: 0.85rem;
+  line-height: 1.5;
+  color: #cfc3af;
+  margin: 0;
+}
+
+.process-arrow {
+  align-self: center;
+  color: #c17f3e;
+  font-size: 1.5rem;
+  margin-top: 28px;
+  flex: 0 0 auto;
+  line-height: 1;
+}
+
+@media (max-width: 860px) {
+  .process-track {
+    flex-direction: column;
+    align-items: center;
+  }
+  .process-arrow {
+    transform: rotate(90deg);
+    margin: 2px 0;
+  }
+  .process-step {
+    width: 100%;
+    max-width: 300px;
+  }
+}
+
+/* ---------------- PRODUCTION PAGE — INDUSTRY DETAIL CARDS ---------------- */
+.industry-detail-section {
+  padding: 100px 6vw 120px;
+  background: #0d0a06;
+  border-top: 1px solid #241f18;
+}
+
+.industry-detail-list {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+
+.industry-detail-card {
+  display: grid;
+  grid-template-columns: 0.95fr 1.05fr;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid #2a251c;
+  background: #14110c;
+}
+
+.industry-detail-card.reverse {
+  grid-template-columns: 1.05fr 0.95fr;
+}
+
+.industry-detail-card.reverse .industry-detail-image {
+  order: 2;
+}
+
+.industry-detail-card.reverse .industry-detail-content {
+  order: 1;
+}
+
+.industry-detail-image {
+  background-size: cover;
+  background-position: center;
+  min-height: 380px;
+}
+
+.industry-detail-content {
+  padding: 50px 46px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.industry-detail-eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.24em;
+  font-size: 0.72rem;
+  color: #c17f3e;
+  font-weight: 600;
+  margin-bottom: 14px;
+}
+
+.industry-detail-title {
+  font-family: 'Oswald', 'Segoe UI', sans-serif;
+  font-size: clamp(1.4rem, 2.2vw, 1.9rem);
+  text-transform: uppercase;
+  color: #f5ede0;
+  line-height: 1.2;
+  margin: 0 0 22px;
+}
+
+.industry-block {
+  margin-bottom: 18px;
+}
+
+.industry-block:last-of-type {
+  margin-bottom: 22px;
+}
+
+.industry-block-label {
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #c17f3e;
+  margin: 0 0 6px;
+}
+
+.industry-block-text {
+  font-size: 0.95rem;
+  line-height: 1.65;
+  color: #cfc3af;
+  margin: 0;
+}
+
+.industry-features {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.industry-features li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.industry-feature-dot {
+  flex: 0 0 auto;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #c17f3e;
+  margin-top: 8px;
+}
+
+.industry-feature-text {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: #cfc3af;
+}
+
+.industry-feature-text strong {
+  color: #f5ede0;
+  font-weight: 700;
+}
+
+@media (max-width: 900px) {
+  .industry-detail-section {
+    padding: 70px 5vw 90px;
+  }
+  .industry-detail-card,
+  .industry-detail-card.reverse {
+    grid-template-columns: 1fr;
+  }
+  .industry-detail-card.reverse .industry-detail-image,
+  .industry-detail-card.reverse .industry-detail-content {
+    order: initial;
+  }
+  .industry-detail-image {
+    min-height: 240px;
+  }
+  .industry-detail-content {
+    padding: 34px 26px;
+  }
+}
+
+/* ---------------- PRODUCTION PAGE — FULL-WIDTH CLOSING BANNER ---------------- */
+.decore-section {
+  position: relative;
+  width: 100%;
+  min-height: 460px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+}
+
+.decore-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    100deg,
+    rgba(13, 10, 6, 0.92) 0%,
+    rgba(13, 10, 6, 0.6) 45%,
+    rgba(13, 10, 6, 0.25) 100%
+  );
+}
+
+.decore-content {
+  position: relative;
+  z-index: 2;
+  max-width: 620px;
+  padding: 60px 6vw;
+}
+
+.decore-eyebrow {
+  display: inline-block;
+  text-transform: uppercase;
+  letter-spacing: 0.28em;
+  font-size: 0.78rem;
+  color: #c17f3e;
+  font-weight: 600;
+  margin-bottom: 18px;
+}
+
+.decore-heading {
+  font-family: 'Oswald', 'Segoe UI', sans-serif;
+  font-size: clamp(1.8rem, 3.4vw, 2.7rem);
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  color: #f5ede0;
+  line-height: 1.15;
+  margin: 0 0 20px;
+}
+
+.decore-text {
+  font-size: 1.02rem;
+  line-height: 1.7;
+  color: #cfc3af;
+  max-width: 560px;
+}
+
+@media (max-width: 700px) {
+  .decore-section {
+    min-height: 380px;
+  }
+  .decore-content {
+    padding: 44px 5vw;
+  }
+}
+
+/* ---------------- CAPABILITY STRIP (plain image grid, no overlay) ---------------- */
+.capability-strip-section {
+  padding: 0 6vw 100px;
+  background: #0d0a06;
+}
+
+.capability-strip-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 22px;
+}
+
+.capability-strip-card {
+  aspect-ratio: 4 / 3;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid #2a251c;
+  background: #14110c;
+}
+
+.capability-strip-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.capability-strip-card:hover img {
+  transform: scale(1.06);
+}
+
+@media (max-width: 860px) {
+  .capability-strip-section {
+    padding: 0 5vw 70px;
+  }
+  .capability-strip-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+}
+
+/* ---------------- SLIDER SECTION ---------------- */
+.slider-section {
+  padding: 100px 6vw 90px;
+  background: #12100c;
+  border-top: 1px solid #241f18;
+}
+
+.slider-heading-row {
+  margin-bottom: 46px;
+}
+
+.slider-eyebrow {
+  display: block;
+  text-transform: uppercase;
+  letter-spacing: 0.25em;
+  font-size: 0.75rem;
+  color: #c17f3e;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.slider-heading {
+  font-family: 'Oswald', 'Segoe UI', sans-serif;
+  font-size: clamp(1.7rem, 3vw, 2.4rem);
+  text-transform: uppercase;
+  color: #f5ede0;
+  margin: 0;
+}
+
+/* Viewport clips the track; the track itself is twice the card set wide
+   and animates left continuously for a seamless auto-slide loop. */
+.slider-viewport {
+  overflow: hidden;
+  width: 100%;
+  -webkit-mask-image: linear-gradient(
+    90deg,
+    transparent 0,
+    #000 5%,
+    #000 95%,
+    transparent 100%
+  );
+  mask-image: linear-gradient(
+    90deg,
+    transparent 0,
+    #000 5%,
+    #000 95%,
+    transparent 100%
+  );
+}
+
+.slider-track {
+  display: flex;
+  gap: 24px;
+  width: max-content;
+  animation: slide-loop 22s linear infinite;
+}
+
+.slider-viewport:hover .slider-track {
+  animation-play-state: paused;
+}
+
+@keyframes slide-loop {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    /* Half the track = one full set of cards (since the list is duplicated) */
+    transform: translateX(-50%);
+  }
+}
+
+.slide-card {
+  position: relative;
+  flex: 0 0 auto;
+  width: min(320px, 78vw);
+  height: 400px;
+  border-radius: 6px;
+  overflow: hidden;
+  border: 1px solid #2a251c;
+}
+
+.slide-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.slide-card:hover img {
+  transform: scale(1.06);
+}
+
+.slide-card-label {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 22px 20px;
+  background: linear-gradient(0deg, rgba(13, 10, 6, 0.9) 0%, transparent 100%);
+}
+
+.slide-card-label span {
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #f5ede0;
+}
+
+/* ---------------- INDUSTRIES / QUALITY GRID ---------------- */
+.pq-section {
+  padding: 90px 6vw 110px;
+  background: #0d0a06;
+}
+
+.pq-heading-row {
+  margin-bottom: 40px;
+}
+
+.pq-heading-row-second {
+  margin-top: 70px;
+}
+
+.pq-eyebrow {
+  display: block;
+  text-transform: uppercase;
+  letter-spacing: 0.25em;
+  font-size: 0.75rem;
+  color: #c17f3e;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.pq-heading {
+  font-family: 'Oswald', 'Segoe UI', sans-serif;
+  font-size: clamp(1.7rem, 3vw, 2.4rem);
+  text-transform: uppercase;
+  color: #f5ede0;
+  margin: 0;
+}
+
+.pq-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 22px;
+}
+
+.pq-grid-quality {
+  grid-template-columns: repeat(5, 1fr);
+}
+
+.pq-card {
+  position: relative;
+  aspect-ratio: 3 / 4;
+  border-radius: 6px;
+  overflow: hidden;
+  border: 1px solid #2a251c;
+  background: #14110c;
+}
+
+.pq-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.pq-card:hover img {
+  transform: scale(1.06);
+}
+
+.pq-card-label {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 16px 14px;
+  background: linear-gradient(0deg, rgba(13, 10, 6, 0.92) 0%, transparent 100%);
+}
+
+.pq-card-label span {
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #f5ede0;
+  line-height: 1.3;
+}
+
+/* ---------------- GOLDEN GLOBAL SECTION ---------------- */
+.global-section {
+  padding: 100px 6vw 130px;
+  background: #0d0a06;
+}
+
+.global-card {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  align-items: stretch;
+  border-radius: 12px;
+  overflow: hidden;
+  background: linear-gradient(135deg, #f3e3c4 0%, #e9d3a3 100%);
+}
+
+.global-content {
+  padding: 64px 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.global-eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.28em;
+  font-size: 0.78rem;
+  color: #8a5a26;
+  font-weight: 700;
+  margin-bottom: 18px;
+}
+
+.global-heading {
+  font-family: 'Oswald', 'Segoe UI', sans-serif;
+  font-size: clamp(1.9rem, 3.2vw, 2.6rem);
+  text-transform: uppercase;
+  color: #2b2013;
+  line-height: 1.15;
+  margin: 0 0 26px;
+}
+
+.global-text {
+  font-size: 1.02rem;
+  line-height: 1.7;
+  color: #4a3a24;
+  margin-bottom: 18px;
+}
+
+.global-tagline {
+  font-family: 'Oswald', 'Segoe UI', sans-serif;
+  font-size: 1.25rem;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  color: #2b2013;
+  border-top: 1px solid #c9a86f;
+  padding-top: 22px;
+  margin-top: 10px;
+  margin-bottom: 0;
+}
+
+.global-image {
+  background-color: #ecdfc0;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  min-height: 420px;
+}
+
+/* ---------------- RESPONSIVE ---------------- */
+/* Font-sizes and spacing already use clamp()/vw above, so they scale
+   smoothly on their own. These breakpoints only adjust layout structure
+   (stacking, grid columns) so mobile keeps the same visual hierarchy
+   as desktop, just stacked instead of side-by-side. */
+
+@media (max-width: 860px) {
+  .global-card {
+    grid-template-columns: 1fr;
+  }
+  .global-content {
+    padding: 40px 28px;
+  }
+  .global-image {
+    min-height: 260px;
+  }
+  .gallery-hero {
+    padding: 0 5vw 60px;
+    align-items: flex-end;
+  }
+  .slider-section {
+    padding: 70px 5vw 60px;
+  }
+  .pq-section {
+    padding: 60px 5vw 80px;
+  }
+  .global-section {
+    padding: 70px 5vw 90px;
+  }
+  .pq-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .pq-grid-quality {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .service-section {
+    padding: 60px 5vw 40px;
+  }
+  .service-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .feature-strip-section {
+    padding: 0 5vw 60px;
+  }
+  .ie-section {
+    padding: 0 5vw 80px;
+  }
+  .ie-card {
+    grid-template-columns: 1fr;
+  }
+  .ie-image {
+    min-height: 240px;
+  }
+  .ie-content {
+    padding: 36px 26px;
+  }
+}
+
+@media (max-width: 600px) {
+  .gallery-hero {
+    min-height: 90vh;
+    padding: 0 6vw 48px;
+  }
+  .gallery-subtext {
+    font-size: 0.98rem;
+  }
+  .slider-heading-row {
+    margin-bottom: 32px;
+  }
+  .slide-card {
+    height: 320px;
+  }
+  .pq-heading-row-second {
+    margin-top: 46px;
+  }
+  .global-content {
+    padding: 32px 22px;
+  }
+  .global-text {
+    font-size: 0.98rem;
+  }
+  .global-tagline {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .slide-card {
+    height: 260px;
+    width: min(240px, 72vw);
+  }
+  .pq-grid,
+  .pq-grid-quality {
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+  }
+  .global-content {
+    padding: 26px 18px;
+  }
+}

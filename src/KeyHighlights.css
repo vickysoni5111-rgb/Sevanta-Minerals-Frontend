@@ -1,0 +1,144 @@
+/* ---------- FULL WIDTH WRAPPER (black background fix) ---------- */
+.keyhighlights-wrapper {
+  width: 100%;
+  background: #fdf8f1;
+}
+
+.keyhighlights {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 60px 24px 80px;
+}
+
+.keyhighlights__header {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.keyhighlights__eyebrow {
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: #b8863f;
+  margin-bottom: 10px;
+}
+
+.keyhighlights__heading {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin: 0;
+}
+
+/* ---------- GRID (3 columns ab 6 cards ke liye) ---------- */
+.keyhighlights__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+/* ---------- CARD ---------- */
+.keyhighlights__card {
+  position: relative;
+  background: #fff;
+  border: 1px solid #eadfca;
+  border-radius: 18px;
+  padding: 14px;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.04);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.keyhighlights__card:hover {
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.09);
+  transform: translateY(-4px);
+}
+
+/* ---------- IMAGE WRAPPER ---------- */
+.keyhighlights__imagewrap {
+  position: relative;
+  width: 100%;
+  height: 340px;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.keyhighlights__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  transition: transform 0.6s ease;
+}
+
+.keyhighlights__card:hover .keyhighlights__img {
+  transform: scale(1.06);
+}
+
+/* ---------- OVERLAY ---------- */
+.keyhighlights__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.75) 0%,
+    rgba(0, 0, 0, 0.35) 40%,
+    rgba(0, 0, 0, 0.05) 70%
+  );
+}
+
+/* ---------- TEXT CONTENT ---------- */
+.keyhighlights__content {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 22px;
+  color: #fff;
+}
+
+.keyhighlights__title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin: 0 0 8px;
+  color: #fff;
+}
+
+.keyhighlights__desc {
+  font-size: 0.92rem;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.9);
+  margin: 0;
+}
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 1024px) {
+  .keyhighlights__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 900px) {
+  .keyhighlights__heading {
+    font-size: 1.7rem;
+  }
+
+  .keyhighlights__imagewrap {
+    height: 300px;
+  }
+}
+
+@media (max-width: 640px) {
+  .keyhighlights__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .keyhighlights__imagewrap {
+    height: 320px;
+  }
+
+  .keyhighlights__title {
+    font-size: 1.2rem;
+  }
+}

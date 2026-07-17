@@ -1,0 +1,278 @@
+.stats-section-wrapper {
+  width: 100%;
+  background-color: #fdfbf7; /* Consistent cream bg */
+  padding: 40px 0;
+}
+
+/* Rounded main layout tray from the image */
+.stats-container-box {
+  background-color: #f9f5eb; /* Soft contrast tone for inner tray */
+  border-radius: 24px;
+  padding: 35px 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: inset 0 1px 2px rgba(255, 255, 255, 0.6);
+  border: 1px solid rgba(223, 183, 108, 0.12);
+}
+
+/* Individual node alignments */
+.stats-item-node {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  flex: 1;
+  justify-content: center;
+}
+
+/* Golden tone custom logos matching original image */
+.stats-item-node__icon-wrap {
+  width: 52px;
+  height: 52px;
+  color: #b38938; /* Signature deep gold */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.stats-item-node__icon-wrap svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.stats-item-node__info {
+  display: flex;
+  flex-direction: column;
+}
+
+.stats-item-node__number {
+  font-size: 2.1rem;
+  font-weight: 700;
+  color: #2c2620; /* Dark premium graphite charcoal */
+  margin: 0;
+  line-height: 1.1;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.stats-item-node__label {
+  font-size: 0.85rem;
+  color: #5a524a;
+  margin: 4px 0 0 0;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+/* Clean divider line setups between statistics nodes */
+.stats-divider-line {
+  width: 1px;
+  height: 45px;
+  background-color: rgba(44, 38, 32, 0.1);
+  margin: 0 15px;
+  flex-shrink: 0;
+}
+
+/* ==========================================================================
+   MOBILE & TABLET RESPONSIVE SYSTEM FOR STATS
+   ========================================================================== */
+@media (max-width: 1024px) {
+  .stats-container-box {
+    padding: 30px 25px;
+  }
+  .stats-item-node__number {
+    font-size: 1.8rem;
+  }
+  .stats-item-node {
+    gap: 12px;
+  }
+}
+
+@media (max-width: 768px) {
+  .stats-container-box {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 35px 20px;
+    padding: 40px 30px;
+    border-radius: 20px;
+  }
+  
+  /* Hide the desktop linear divider lines on mobile grids */
+  .stats-divider-line {
+    display: none;
+  }
+
+  .stats-item-node {
+    justify-content: flex-start;
+    width: 100%;
+    padding-left: 10%;
+  }
+}
+
+@media (max-width: 480px) {
+  .stats-container-box {
+    grid-template-columns: 1fr; /* Turns into a vertical stacked stack on small devices */
+    gap: 25px;
+    padding: 30px 20px;
+  }
+  
+  .stats-item-node {
+    padding-left: 0;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    gap: 8px;
+  }
+  
+  .stats-item-node__label {
+    margin-top: 2px;
+  }
+}
+
+.stats-section-wrapper {
+  width: 100%;
+  background-color: #fdfbf7;
+  padding: clamp(24px, 5vw, 40px) 16px;
+}
+
+.stats-container-box {
+  background-color: #f9f5eb;
+  border-radius: 24px;
+  padding: clamp(20px, 4vw, 35px) clamp(20px, 5vw, 50px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: inset 0 1px 2px rgba(255, 255, 255, 0.6);
+  border: 1px solid rgba(223, 183, 108, 0.12);
+  max-width: 1200px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+}
+
+.stats-item-node {
+  display: flex;
+  align-items: center;
+  gap: clamp(10px, 2vw, 18px);
+  flex: 1 1 auto;
+  justify-content: center;
+  min-width: 140px;
+}
+
+.stats-item-node__icon-wrap {
+  width: clamp(38px, 6vw, 52px);
+  height: clamp(38px, 6vw, 52px);
+  color: #b38938;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.stats-item-node__icon-wrap svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.stats-item-node__info {
+  display: flex;
+  flex-direction: column;
+  min-width: 0; /* text overflow fix */
+}
+
+.stats-item-node__number {
+  font-size: clamp(1.3rem, 3.5vw, 2.1rem);
+  font-weight: 700;
+  color: #2c2620;
+  margin: 0;
+  line-height: 1.1;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  white-space: nowrap;
+}
+
+.stats-item-node__label {
+  font-size: clamp(0.7rem, 1.8vw, 0.85rem);
+  color: #5a524a;
+  margin: 4px 0 0 0;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.stats-divider-line {
+  width: 1px;
+  height: clamp(30px, 4vw, 45px);
+  background-color: rgba(44, 38, 32, 0.1);
+  margin: 0 clamp(6px, 1.5vw, 15px);
+  flex-shrink: 0;
+}
+
+/* ==========================================================================
+   RESPONSIVE BREAKPOINTS
+   ========================================================================== */
+
+/* Large tablets / small laptops */
+@media (max-width: 1024px) {
+  .stats-container-box {
+    padding: 28px 24px;
+  }
+}
+
+/* Tablets — 2x2 grid */
+@media (max-width: 768px) {
+  .stats-container-box {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 28px 16px;
+    padding: 32px 24px;
+    border-radius: 20px;
+  }
+
+  .stats-divider-line {
+    display: none;
+  }
+
+  .stats-item-node {
+    justify-content: flex-start;
+    width: 100%;
+    min-width: 0;
+    padding-left: 0;
+  }
+
+  .stats-item-node__number,
+  .stats-item-node__label {
+    white-space: normal;
+  }
+}
+
+/* Large phones */
+@media (max-width: 560px) {
+  .stats-container-box {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px 12px;
+    padding: 24px 18px;
+  }
+
+  .stats-item-node {
+    gap: 8px;
+  }
+}
+
+/* Small phones — stacked */
+@media (max-width: 400px) {
+  .stats-container-box {
+    grid-template-columns: 1fr;
+    gap: 22px;
+    padding: 24px 16px;
+  }
+
+  .stats-item-node {
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .stats-item-node__label {
+    margin-top: 0;
+  }
+}
