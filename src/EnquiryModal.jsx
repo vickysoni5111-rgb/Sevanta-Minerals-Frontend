@@ -34,7 +34,9 @@ const initialFormState = {
 
 // 🎯 PRODUCTION FIX: localhost hardcoded nahi, ab .env se live backend URL uthega.
 // Agar VITE_API_URL set nahi hai (local dev me) to localhost:5000 pe fallback hoga.
-const API_BASE_URL = import.meta.env.VITE_API_URL || "http://localhost:5000";
+// ✅ EXTRA FIX: trailing slash (agar Vercel env var ke end mein "/" ho) ko
+// automatically strip kar diya jaata hai, taaki kabhi double slash (//api/...) na bane.
+const API_BASE_URL = (import.meta.env.VITE_API_URL || "http://localhost:5000").replace(/\/+$/, "");
 
 export default function EnquiryModal({ isOpen, onClose }) {
   const [formData, setFormData] = useState(initialFormState);
