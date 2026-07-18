@@ -10,7 +10,7 @@ import WhatsAppButton from './WhatsAppButton';
 import DynamicProductPage from './DynamicProductPage';
 import DynamicGalleryPage from './DynamicGalleryPage';
 import ContactPage from './ContactPage'; 
-import QualitySection from './QualitySection'; 
+import QualitySection from './Qualitysection'; 
 
 const GetQuote = () => <div style={{paddingTop: '120px', minHeight: '80vh', background: '#0d0a06', color: '#fff', textAlign: 'center'}}><h2>Request a Quote</h2><p>Get competitive pricing for custom industrial meshes.</p></div>;
 
@@ -23,7 +23,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
-          <Route path="/quality" element={<QualitySection />} /> 
+          <Route path="/quality" element={<Qualitysection />} /> 
           <Route path="/contact" element={<ContactPage />} /> 
           <Route path="/get-quote" element={<GetQuote />} />
           <Route path="/products/:slug" element={<DynamicProductPage />} />
