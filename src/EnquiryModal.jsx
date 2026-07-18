@@ -32,6 +32,10 @@ const initialFormState = {
   details: "",
 };
 
+// 🎯 PRODUCTION FIX: localhost hardcoded nahi, ab .env se live backend URL uthega.
+// Agar VITE_API_URL set nahi hai (local dev me) to localhost:5000 pe fallback hoga.
+const API_BASE_URL = import.meta.env.VITE_API_URL || "http://localhost:5000";
+
 export default function EnquiryModal({ isOpen, onClose }) {
   const [formData, setFormData] = useState(initialFormState);
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -49,7 +53,8 @@ export default function EnquiryModal({ isOpen, onClose }) {
     setErrorMsg("");
 
     try {
-      const response = await fetch("http://localhost:5000/api/send-lead", {
+      // 🎯 FIX: hardcoded localhost hataya, ab live backend URL use hoga
+      const response = await fetch(`${API_BASE_URL}/api/send-lead`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({

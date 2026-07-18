@@ -58,6 +58,10 @@ const steps = [
   },
 ];
 
+// 🎯 PRODUCTION FIX: localhost hardcoded nahi, ab .env se live backend URL uthega.
+// Agar VITE_API_URL set nahi hai (local dev me) to localhost:5000 pe fallback hoga.
+const API_BASE_URL = import.meta.env.VITE_API_URL || "http://localhost:5000";
+
 export default function ChatBotWidget() {
   const [isOpen, setIsOpen] = useState(false);
   const [stepIndex, setStepIndex] = useState(0);
@@ -157,7 +161,7 @@ export default function ChatBotWidget() {
     const currentStep = steps[stepIndex];
     const value = inputValue.trim();
 
-    // अगर वैलिडेशन फेल हो जाए तो आगे न बढ़ने दें
+    // अगर वैलिडेशन फेल हो जाए तो आगे न बढ़ने दें
     if (!validateInput(value, currentStep.type, currentStep.optional)) {
       alert(`Please enter a valid ${currentStep.key}.`);
       return;
@@ -183,7 +187,8 @@ export default function ChatBotWidget() {
     triggerBotResponse("Got it! Sending your details to our team... ⏳");
 
     try {
-      const response = await fetch("http://localhost:5000/api/send-lead", {
+      // 🎯 FIX: hardcoded localhost hataya, ab live backend URL use hoga
+      const response = await fetch(`${API_BASE_URL}/api/send-lead`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
