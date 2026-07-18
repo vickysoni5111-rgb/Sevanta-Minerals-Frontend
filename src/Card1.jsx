@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./card1.css";
+import "./Card1.css";
 import EnquiryModal from "./EnquiryModal";
 
 import consistentPurityImg from "./assets/Consistent-Purity.png";

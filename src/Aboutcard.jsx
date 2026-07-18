@@ -1,5 +1,5 @@
 import React from 'react';
-import './AboutCard.css';
+import './Aboutcard.css';
 
 /*
   Images are hosted directly (Unsplash CDN) — no local files needed,
