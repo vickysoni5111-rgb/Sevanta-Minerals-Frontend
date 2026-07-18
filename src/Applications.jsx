@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { Link } from "react-router-dom";
 import "./Applications.css";
 
 import CeramicsSanitaryware from "./assets/c1.png";
@@ -151,12 +152,12 @@ Infinite Applications.</h2>
                 <span className="applications__tag">{active.tag}</span>
                 <h3 className="applications__title">{active.title}</h3>
                 <p className="applications__desc">{active.description}</p>
-                <a href="/gallery/production" className="applications__link">
-                  Know More
+                <Link to="/gallery/production" className="applications__link">
+             
                   <svg viewBox="0 0 16 16" fill="none">
                     <path d="M6 3l5 5-5 5" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
                   </svg>
-                </a>
+                </Link>
               </div>
             </motion.div>
           </AnimatePresence>

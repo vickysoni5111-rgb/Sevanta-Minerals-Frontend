@@ -237,8 +237,8 @@ function Home() {
                 world-class European grinding technology to deliver
                 consistent, globally benchmarked silica solutions.
               </p>
-              <a href="/about" className="whoweare__link">
-                Know More
+              <a  className="whoweare__link">
+          
                 <svg viewBox="0 0 16 16" fill="none">
                   <path
                     d="M6 3l5 5-5 5"

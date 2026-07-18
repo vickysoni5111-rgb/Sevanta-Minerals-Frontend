@@ -36,49 +36,54 @@ export default function PartnerSection() {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   return (
-    <section
-      className="partner-section"
-      style={{ backgroundImage: `url(${AsianQuartzBg})` }}
-    >
-      <motion.div
-        className="partner-section__overlay"
-        variants={overlayVariants}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: false, amount: 0.3 }}
-      />
+    <div className="partner-section-wrapper">
+      <section className="partner-section">
+        <img
+          src={AsianQuartzBg}
+          alt="Asian Quartz Facility"
+          className="partner-section__img"
+        />
 
-      <div className="partner-section__content">
-        <motion.h2
-          className="partner-section__heading"
-          variants={headingVariants}
+        <motion.div
+          className="partner-section__overlay"
+          variants={overlayVariants}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: false, amount: 0.3 }}
-        >
-          Partner with Us for
-          <br />
-          High-Performance Quartz Solutions
-        </motion.h2>
+        />
 
-        <motion.button
-          className="partner-section__btn"
-          variants={buttonVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: false, amount: 0.3 }}
-          whileHover={{ scale: 1.06 }}
-          whileTap={{ scale: 0.96 }}
-          onClick={() => setIsModalOpen(true)}
-        >
-          Enquiry
-        </motion.button>
-      </div>
+        <div className="partner-section__content">
+          <motion.h2
+            className="partner-section__heading"
+            variants={headingVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: false, amount: 0.3 }}
+          >
+            Partner with Us for
+            <br />
+            High-Performance Quartz Solutions
+          </motion.h2>
 
-      <EnquiryModal
-        isOpen={isModalOpen}
-        onClose={() => setIsModalOpen(false)}
-      />
-    </section>
+          <motion.button
+            className="partner-section__btn"
+            variants={buttonVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: false, amount: 0.3 }}
+            whileHover={{ scale: 1.06 }}
+            whileTap={{ scale: 0.96 }}
+            onClick={() => setIsModalOpen(true)}
+          >
+            Enquiry
+          </motion.button>
+        </div>
+
+        <EnquiryModal
+          isOpen={isModalOpen}
+          onClose={() => setIsModalOpen(false)}
+        />
+      </section>
+    </div>
   );
 }

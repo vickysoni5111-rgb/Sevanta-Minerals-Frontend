@@ -1,5 +1,6 @@
 import React, { useState, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { Helmet } from 'react-helmet-async';
 import './About.css';
 import MarbleCTA from'./MarbleCTA';
 // Existing Top Banner & Base Assets
@@ -137,8 +138,22 @@ function About() {
   };
 
   return (
+    
     <div className="about-page-wrapper">
-      
+
+    <Helmet>
+      <title>About Us | Sevanta Minerals - Quartz Powder Manufacturer & Exporter</title>
+      <meta 
+        name="description" 
+        content="Sevanta Minerals is a trusted manufacturer & exporter of high-purity Quartz Powder (200/250/300 Mesh) serving glass, ceramics, paints, construction & fiberglass industries worldwide." 
+      />
+      <link rel="canonical" href="https://YOURDOMAIN.com/about" />
+      <meta property="og:title" content="About Sevanta Minerals - Quartz Powder Manufacturer" />
+      <meta property="og:description" content="High purity quartz solutions for global industries." />
+    </Helmet>
+
+    {/* ---------- 1. HERO BANNER SECTION ---------- */}
+    ...
       {/* ---------- 1. HERO BANNER SECTION ---------- */}
       <section className="about-hero" style={{ backgroundImage: `url(${ApplicationBanner})` }}>
         <div className="about-hero__overlay"></div>

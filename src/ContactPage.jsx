@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
+import { Helmet } from "react-helmet-async";
 import "./ContactPage.css";
 
 // 👇 Apne assets folder ke hisaab se path adjust kar lena
@@ -119,6 +120,18 @@ export default function ContactPage() {
 
   return (
     <div className="contact-page">
+      {/* 🎯 SEO — Contact page title/description */}
+      <Helmet>
+        <title>Contact Us | Sevanta Minerals - Quartz Powder Supplier</title>
+        <meta
+          name="description"
+          content="Get in touch with Sevanta Minerals for quartz powder inquiries, bulk orders, and export requirements. Our team responds within 24 hours."
+        />
+        <link rel="canonical" href="https://YOURDOMAIN.com/contact" />
+        <meta property="og:title" content="Contact Sevanta Minerals" />
+        <meta property="og:description" content="Reach out for quartz powder inquiries, bulk orders and export requirements." />
+      </Helmet>
+
       {/* ---------- HERO SECTION (full-width image with overlay content) ---------- */}
       <section className="contact-hero">
         <motion.img

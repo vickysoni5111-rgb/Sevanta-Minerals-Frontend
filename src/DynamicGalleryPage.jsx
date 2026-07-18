@@ -2,7 +2,7 @@ import { Fragment } from 'react';
 import { useParams } from 'react-router-dom';
 import { galleryTypes } from './gallery';
 import './DynamicGalleryPage.css';
-
+import { Helmet } from 'react-helmet-async';
 // Images src/assets/ folder me hain, aur ye component src/ me directly hai,
 // isliye './assets/...' se import ho rahi hain.
 import industryImg from './assets/industry.png';
@@ -68,6 +68,26 @@ import fiberglassImg from './assets/fiberglass-large1.png';
 import constructionChemAdhesivesLargeImg from './assets/construction-chemicals-and-adhesives-large.png';
 import plasticsImg from './assets/plastics.png';
 import oilfieldHydraulicImg from './assets/oilfield-and-hydraulic-fracturing.png';
+
+// 🎯 SEO — har gallery type ka apna unique title + description (Google ke liye zaroori)
+const gallerySEO = {
+  mines: {
+    title: "Mines & Extraction Sites | Sevanta Minerals Quartz Mining",
+    desc: "Explore Sevanta Minerals' active quartz mining sites in Rajasthan, delivering high-purity raw material for global industries."
+  },
+  machinery: {
+    title: "Machinery & Plant Infrastructure | Sevanta Minerals",
+    desc: "See the advanced processing machinery and plant infrastructure behind Sevanta Minerals' high-purity quartz powder production."
+  },
+  production: {
+    title: "Production Line & Quartz Processing | Sevanta Minerals",
+    desc: "From raw ore to refined quartz powder - explore Sevanta Minerals' full production process for 200/250/300 mesh grades."
+  },
+  packaging: {
+    title: "Packaging & Dispatch | Sevanta Minerals Quartz Powder",
+    desc: "Reliable packaging and on-time dispatch of quartz powder shipments by Sevanta Minerals, serving global industrial buyers."
+  }
+};
 
 // Har gallery type ke liye alag hero content.
 // Naya type add karna ho to yaha aur gallery.js dono me entry add karo.
@@ -406,10 +426,19 @@ const DynamicGalleryPage = () => {
   const { type } = useParams();
   const label = galleryTypes[type];
   const content = galleryContent[type];
+  // 🎯 SEO fallback: agar gallerySEO me entry nahi hai to generic title/desc use hoga
+  const seo = gallerySEO[type] || {
+    title: `${label} | Sevanta Minerals`,
+    desc: `Real-time high resolution captures of our ${label}.`,
+  };
 
   if (!label) {
     return (
       <div className="gallery-notfound">
+        <Helmet>
+          <title>Gallery Not Found | Sevanta Minerals</title>
+          <meta name="robots" content="noindex" />
+        </Helmet>
         <h2>Gallery Not Found</h2>
         <p>The gallery you're looking for doesn't exist.</p>
       </div>
@@ -422,6 +451,10 @@ const DynamicGalleryPage = () => {
   if (type !== 'mines' && type !== 'machinery' && type !== 'packaging' && type !== 'production') {
     return (
       <div className="gallery-simple">
+        <Helmet>
+          <title>{seo.title}</title>
+          <meta name="description" content={seo.desc} />
+        </Helmet>
         <h2>Gallery - {label}</h2>
         <p>Real-time high resolution captures of our {label}.</p>
       </div>
@@ -432,6 +465,11 @@ const DynamicGalleryPage = () => {
   if (type === 'machinery') {
     return (
       <div className="gallery-page">
+        <Helmet>
+          <title>{seo.title}</title>
+          <meta name="description" content={seo.desc} />
+          <link rel="canonical" href={`https://YOURDOMAIN.com/gallery/machinery`} />
+        </Helmet>
         <section
           className="gallery-hero"
           style={{ backgroundImage: `url(${aboutImg})` }}
@@ -525,6 +563,11 @@ const DynamicGalleryPage = () => {
   if (type === 'packaging') {
     return (
       <div className="gallery-page">
+        <Helmet>
+          <title>{seo.title}</title>
+          <meta name="description" content={seo.desc} />
+          <link rel="canonical" href={`https://YOURDOMAIN.com/gallery/packaging`} />
+        </Helmet>
         {/* ---------- HERO (collection.png as full background) ---------- */}
         <section
           className="gallery-hero"
@@ -645,6 +688,11 @@ const DynamicGalleryPage = () => {
   if (type === 'production') {
     return (
       <div className="gallery-page">
+        <Helmet>
+          <title>{seo.title}</title>
+          <meta name="description" content={seo.desc} />
+          <link rel="canonical" href={`https://YOURDOMAIN.com/gallery/production`} />
+        </Helmet>
         {/* ---------- FULL-HEIGHT HERO (marbal.png) ---------- */}
         <section
           className="gallery-hero"
@@ -739,6 +787,11 @@ const DynamicGalleryPage = () => {
 
   return (
     <div className="gallery-page">
+      <Helmet>
+        <title>{seo.title}</title>
+        <meta name="description" content={seo.desc} />
+        <link rel="canonical" href={`https://YOURDOMAIN.com/gallery/${type}`} />
+      </Helmet>
       {/* ---------- HERO SECTION ---------- */}
       <section
         className="gallery-hero"
