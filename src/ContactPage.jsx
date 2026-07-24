@@ -252,59 +252,7 @@ export default function ContactPage() {
                 </div>
               </motion.div>
 
-              <motion.div className="contact-form__field" variants={formItem}>
-                <label>Company Name</label>
-                <input
-                  type="text"
-                  name="company"
-                  value={formData.company}
-                  onChange={handleChange}
-                  placeholder="Enter your company name"
-                />
-              </motion.div>
-
-              <motion.div className="contact-form__field" variants={formItem}>
-                <label>Service Interested In</label>
-                <select
-                  name="service"
-                  value={formData.service}
-                  onChange={handleChange}
-                >
-                  <option value="">Select a service</option>
-                  {serviceOptions.map((s, i) => (
-                    <option key={i} value={s}>
-                      {s}
-                    </option>
-                  ))}
-                </select>
-              </motion.div>
-
-              <motion.div className="contact-form__field" variants={formItem}>
-                <label>Budget Range</label>
-                <select
-                  name="budget"
-                  value={formData.budget}
-                  onChange={handleChange}
-                >
-                  <option value="">Select Budget</option>
-                  {budgetOptions.map((b, i) => (
-                    <option key={i} value={b}>
-                      {b}
-                    </option>
-                  ))}
-                </select>
-              </motion.div>
-
-              <motion.div className="contact-form__field" variants={formItem}>
-                <label>Project Details</label>
-                <textarea
-                  name="details"
-                  rows="4"
-                  value={formData.details}
-                  onChange={handleChange}
-                  placeholder="Tell us more about your requirement..."
-                />
-              </motion.div>
+            
 
               {errorMsg && (
                 <motion.p
