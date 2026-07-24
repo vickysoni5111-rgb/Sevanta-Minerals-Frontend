@@ -12,21 +12,8 @@ const steps = [
     type: "text",
   },
   {
-    key: "service",
-    bot: (name) => `Thanks ${name}! What's your inquiry about? Which product/service are you interested in?`,
-    placeholder: "Select an option...",
-    type: "options",
-    options: [
-      "Quartz Grains",
-      "Fine Quartz Powder",
-      "Specialized Quartz Fractions",
-      "SilQ™ Series",
-      "General Enquiry",
-    ],
-  },
-  {
     key: "email",
-    bot: "Great! What's your email address so our team can send you the catalog/quotes?",
+    bot: (name) => `Thanks ${name}! What's your email address so our team can send you the catalog/quotes?`,
     placeholder: "Type your email (e.g., name@example.com)...",
     type: "email",
   },
@@ -37,23 +24,9 @@ const steps = [
     type: "tel",
   },
   {
-    key: "company",
-    bot: "Which company are you reaching out from? (You can skip this if not applicable)",
-    placeholder: "Company name (optional)...",
-    type: "text",
-    optional: true,
-  },
-  {
-    key: "budget",
-    bot: "What's your approximate monthly/project requirement budget range?",
-    placeholder: "Select budget...",
-    type: "options",
-    options: ["₹10K - ₹50K", "₹50K - ₹1L", "₹1L+"],
-  },
-  {
-    key: "details",
-    bot: "Last step! Please tell us a bit more about your specific requirements.",
-    placeholder: "Type your specifications, quantity, etc...",
+    key: "address",
+    bot: "Last step! What's your address?",
+    placeholder: "Type your address...",
     type: "textarea",
   },
 ];
@@ -198,10 +171,7 @@ export default function ChatBotWidget() {
           email: finalData.email,
           countryCode: "",
           phone: finalData.phone,
-          companyName: finalData.company,
-          service: finalData.service,
-          budget: finalData.budget,
-          projectDetails: finalData.details,
+          address: finalData.address,
         }),
       });
 
