@@ -174,63 +174,7 @@ export default function EnquiryModal({ isOpen, onClose }) {
                 </div>
               </div>
 
-              <div className="enquiry-modal__field">
-                <label>Company Name</label>
-                <input
-                  type="text"
-                  name="company"
-                  value={formData.company}
-                  onChange={handleChange}
-                  placeholder="Enter your company name"
-                />
-              </div>
-
-              <div className="enquiry-modal__field">
-                <label>Service Interested In</label>
-                <select
-                  name="service"
-                  value={formData.service}
-                  onChange={handleChange}
-                >
-                  <option value="">Select a service</option>
-                  {serviceOptions.map((s, i) => (
-                    <option key={i} value={s}>
-                      {s}
-                    </option>
-                  ))}
-                </select>
-              </div>
-
-              <div className="enquiry-modal__field">
-                <label>Budget Range</label>
-                <select
-                  name="budget"
-                  value={formData.budget}
-                  onChange={handleChange}
-                >
-                  <option value="">Select Budget</option>
-                  {budgetOptions.map((b, i) => (
-                    <option key={i} value={b}>
-                      {b}
-                    </option>
-                  ))}
-                </select>
-              </div>
-
-              <div className="enquiry-modal__field">
-                <label>Project Details</label>
-                <textarea
-                  name="details"
-                  rows="4"
-                  value={formData.details}
-                  onChange={handleChange}
-                  placeholder="Tell us more about your requirement..."
-                />
-              </div>
-
-              {errorMsg && (
-                <p className="enquiry-modal__error">{errorMsg}</p>
-              )}
+             
 
               <button
                 type="submit"
