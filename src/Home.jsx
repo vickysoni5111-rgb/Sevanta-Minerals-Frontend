@@ -138,7 +138,6 @@ function Home() {
             initial="hidden"
             animate="visible"
           >
-            {/* Changed to h2 for hierarchical balance */}
             <motion.h2
               className="banner-small-title"
               variants={heroTextVariants}
@@ -146,16 +145,13 @@ function Home() {
               Super White. Super Pure.
             </motion.h2>
 
-            {/* 👑 Golden Rule of SEO: ONLY ONE H1 Tag Per Page containing main target keyword */}
+            {/* 👑 Golden Rule of SEO: Main H1 Tag inside Hero Banner */}
             <motion.h1
               className="banner-main-title"
               variants={heroTextVariants}
               transition={{ delay: 0.15 }}
             >
-              High-purity quartz grits and powders engineered for{' '}
-              <span className="gold-accent-text">
-                advanced industrial applications.
-              </span>
+              High-Purity <span className="gold-accent-text">Quartz Powder</span> & Grits Manufacturer in India.
             </motion.h1>
 
             <motion.div className="hero-actions" variants={heroButtonVariants}>
@@ -237,8 +233,7 @@ function Home() {
                 world-class European grinding technology to deliver
                 consistent, globally benchmarked silica solutions.
               </p>
-              <a  className="whoweare__link">
-          
+              <a className="whoweare__link">
                 <svg viewBox="0 0 16 16" fill="none">
                   <path
                     d="M6 3l5 5-5 5"
